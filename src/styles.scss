@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use "styles/button";
+
 html, body {
   height: 100%;
 }
@@ -6,4 +8,12 @@ html, body {
 body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
+}
+
+qd-header,
+qd-side-nav,
+qd-footer,
+qd-counter,
+main {
+  border: 1px solid darkblue;
 }

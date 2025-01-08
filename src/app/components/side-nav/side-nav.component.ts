@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class SideNavComponent {
 
+  clickCount: number = 0;
+
 }
