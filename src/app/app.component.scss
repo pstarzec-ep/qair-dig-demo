@@ -16,3 +16,10 @@ main {
   flex: 1 1 auto;
   padding: 0 1rem;
 }
+
+.main {
+  &__counter-container {
+    display: flex;
+    justify-content: center;
+  }
+}
