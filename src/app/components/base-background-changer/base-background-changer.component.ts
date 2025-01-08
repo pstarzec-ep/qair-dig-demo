@@ -22,8 +22,10 @@ export class BaseBackgroundChangerComponent {
 
   constructor(private counterService: CounterService,
               private backgroundChangerDirective: BackgroundChangerDirective,
-              @Inject(ACTIVATE_BACKGROUND_COUNT) readonly activateBackgroundCount: number) {
-    this.backgroundChangerDirective.activate = () => this.counterService.counter >= activateBackgroundCount;
+              @Inject(ACTIVATE_BACKGROUND_COUNT) private readonly activateBackgroundCount: number) {
+    this.backgroundChangerDirective.activate = () => {
+      return this.counterService.counter >= activateBackgroundCount;
+    };
   }
 
   increment() {
