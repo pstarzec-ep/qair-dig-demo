@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ACTIVATE_BACKGROUND_COUNT } from '../../vars';
 
 import { BaseBackgroundChangerComponent } from './base-background-changer.component';
 
@@ -9,6 +10,9 @@ describe('BaseBackgroundChangerComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [BaseBackgroundChangerComponent],
+      providers: [
+        { provide: ACTIVATE_BACKGROUND_COUNT, useValue: 3 },
+      ],
     })
       .compileComponents();
 
