@@ -16,5 +16,9 @@ qd-side-nav,
 qd-footer,
 qd-counter,
 main {
-  border: 1px solid darkblue;
+  border: 1px solid var(--border-color);
+}
+
+:root {
+  --border-color: darkblue;
 }
