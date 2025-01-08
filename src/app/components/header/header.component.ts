@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { BackgroundChangerDirective } from '../../directives';
+import { CounterService } from '../../services';
 import { ACTIVATE_BACKGROUND_COUNT } from '../../vars';
 import { CounterBtnComponent } from '../counter-btn';
 
@@ -7,6 +8,9 @@ import { CounterBtnComponent } from '../counter-btn';
   selector: 'qd-header',
   imports: [
     CounterBtnComponent,
+  ],
+  providers: [
+    CounterService,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -16,10 +20,13 @@ import { CounterBtnComponent } from '../counter-btn';
 })
 export class HeaderComponent {
 
-  clickCount: number = 0;
-
-  constructor(private backgroundChangerDirective: BackgroundChangerDirective,
+  constructor(private counterService: CounterService,
+              private backgroundChangerDirective: BackgroundChangerDirective,
               @Inject(ACTIVATE_BACKGROUND_COUNT) readonly activateBackgroundCount: number) {
-    this.backgroundChangerDirective.activate = () => this.clickCount >= activateBackgroundCount;
+    this.backgroundChangerDirective.activate = () => this.counterService.counter >= activateBackgroundCount;
+  }
+
+  increment() {
+    this.counterService.increment();
   }
 }

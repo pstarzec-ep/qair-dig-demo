@@ -12,12 +12,12 @@ export class CounterBtnComponent {
     this.clickCount = value;
   }
 
-  @Output() countChange = new EventEmitter<number>();
+  @Output() increment = new EventEmitter<number>();
 
   clickCount: number = 0;
 
   onClick() {
     this.clickCount++;
-    this.countChange.emit(this.clickCount);
+    this.increment.emit(this.clickCount);
   }
 }
