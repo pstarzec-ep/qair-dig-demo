@@ -20,4 +20,15 @@ describe('CounterBtnComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('onClick', () => {
+    it('should emit increment event', () => {
+      // Arrange
+      spyOn(component.increment, 'emit');
+      // Act
+      component.onClick();
+      // Assert
+      expect(component.increment.emit).toHaveBeenCalled();
+    });
+  });
 });

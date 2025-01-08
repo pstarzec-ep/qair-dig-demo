@@ -15,8 +15,4 @@ import { CounterBtnComponent } from '../counter-btn';
   styleUrl: './counter.component.scss',
 })
 export class CounterComponent extends BaseBackgroundChangerComponent {
-
-  get counter(): number {
-    return this.counterService.counter;
-  }
 }

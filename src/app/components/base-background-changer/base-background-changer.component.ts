@@ -16,7 +16,11 @@ import { ACTIVATE_BACKGROUND_COUNT } from '../../vars';
 })
 export class BaseBackgroundChangerComponent {
 
-  constructor(protected counterService: CounterService,
+  get counter(): number {
+    return this.counterService.counter;
+  }
+
+  constructor(private counterService: CounterService,
               private backgroundChangerDirective: BackgroundChangerDirective,
               @Inject(ACTIVATE_BACKGROUND_COUNT) readonly activateBackgroundCount: number) {
     this.backgroundChangerDirective.activate = () => this.counterService.counter >= activateBackgroundCount;
