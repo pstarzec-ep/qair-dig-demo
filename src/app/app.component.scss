@@ -1,0 +1,24 @@
+:host {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav {
+  &__container {
+    flex: 1 0 auto;
+    display: flex;
+
+    main {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+qd-header,
+qd-side-nav,
+qd-footer,
+main {
+  border: 1px solid darkblue;
+}
